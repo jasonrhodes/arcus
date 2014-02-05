@@ -1,12 +1,12 @@
 {
   "name": "arcus",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A set of tools for manipulating color values",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha -R spec"
   },
-  "repository": "https://github.com/jasonrhodes/arcus",
+  "repository": "https://github.com/johnshopkins/arcus",
   "keywords": [
     "color",
     "harmony",
