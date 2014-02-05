@@ -1,19 +1,28 @@
-var chai = require("chai"),
-    converter = require("../index.js");
+var expect = require("chai").expect,
+    arcus = require("../index.js");
 
-chai.should();
+describe("Arcus.converter", function () {
 
-describe("Converter", function () {
+    describe("RGB converter", function () {
 
-    it("should convert RGB array to HSL", function () {
+        var rgb = [0, 255, 255];
+        var expected = {
+            hsl: [180, 100, 50]
+        };
+        
+        it("should convert array to HSL", function () {
 
-        converter.rgb([0, 255, 255]).hsl().should.deep.equal([180, 100, 50]);
+            var hsl = arcus.converter.rgb(rgb).hsl();
+            expect(hsl).to.deep.equal(expected.hsl);
 
-    });
+        });
 
-    it("should convert an RGB argument list to HSL", function () {
+        it("should convert argument list to HSL", function () {
 
-        converter.rgb(0, 255, 255).hsl().should.deep.equal([180, 100, 50]);
+            var hsl = arcus.converter.rgb(rgb[0], rgb[1], rgb[2]).hsl();
+            expect(hsl).to.deep.equal(expected.hsl);
+
+        });
 
     });
 
