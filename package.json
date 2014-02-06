@@ -25,7 +25,8 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "~1.9.0",
-    "mocha": "~1.17.1"
+    "mocha": "~1.17.1",
+    "sinon": "~1.8.1"
   },
   "dependencies": {
     "color-convert": "~0.3.1",
