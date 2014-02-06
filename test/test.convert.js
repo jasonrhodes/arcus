@@ -1,5 +1,5 @@
 var expect = require("chai").expect,
-    arcus = require("../index.js");
+    converter = require("../index.js").converter;
 
 describe("Arcus.converter", function () {
 
@@ -12,14 +12,14 @@ describe("Arcus.converter", function () {
         
         it("should convert array to HSL", function () {
 
-            var hsl = arcus.converter.rgb(rgb).hsl();
+            var hsl = converter.rgb2hsl(rgb);
             expect(hsl).to.deep.equal(expected.hsl);
 
         });
 
         it("should convert argument list to HSL", function () {
 
-            var hsl = arcus.converter.rgb(rgb[0], rgb[1], rgb[2]).hsl();
+            var hsl = converter.rgb2hsl(rgb[0], rgb[1], rgb[2]);
             expect(hsl).to.deep.equal(expected.hsl);
 
         });
