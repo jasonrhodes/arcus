@@ -1,4 +1,5 @@
 var expect = require("chai").expect,
+    sinon = require("sinon"),
     Arcus = require("../index.js");
 
 describe("Arcus.Chords", function () {
@@ -81,9 +82,19 @@ describe("Arcus.Chords", function () {
 
     describe("compute method", function () {
 
-        it("should be stubbed with sinon", function () {
+        var stubs = { rotate: sinon.stub().returns(120) };
+
+        it("should return rotated value if there is no universe", function () {
+            
+            var maker = new Arcus.Chord(360, {
+                rotate: stubs.rotate
+            });
+
+            expect(maker.compute()).to.equal(120);
 
         });
+
+        sinon.stub(maker.prototype, "closest")
 
     });
 
